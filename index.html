@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netaji Nagar Super League | Player Registration</title>
+    <meta name="description" content="Official player registration portal for the Netaji Nagar Super League, a four-team grassroots football tournament.">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Netaji Nagar Super League | Player Registration">
+    <meta property="og:description" content="Official player registration portal for the Netaji Nagar Super League, a four-team grassroots football tournament.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <!-- Google Fonts: Barlow Condensed (Stadium Display), Outfit (Brand & Cards), Space Grotesk (Accents), Plus Jakarta Sans (Interface), Space Mono (Technical) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Lucide Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Sticky / Floating Navbar -->
+    <header class="site-header" id="site-header">
+        <div class="container nav-container">
+            <a href="#hero" class="brand-link" aria-label="Netaji Nagar Super League Home">
+                <div class="brand-text-block">
+                    <span class="brand-title">Netaji Nagar</span>
+                    <span class="brand-badge">Super League</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Primary Navigation">
+                <a href="#registration" class="nav-link">Registration</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#registration" class="btn btn-primary">
+                    <i data-lucide="user-plus"></i>
+                    <span>Register Now</span>
+                </a>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+        <div class="drawer-header">
+            <div class="brand-link">
+                <div class="brand-text-block">
+                    <span class="brand-title">Netaji Nagar</span>
+                    <span class="brand-badge">Super League</span>
+                </div>
+            </div>
+            <button type="button" class="drawer-close" id="drawer-close" aria-label="Close navigation menu">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="#registration" class="nav-link drawer-nav-link">Registration</a>
+            <a href="#how-it-works" class="nav-link drawer-nav-link">How It Works</a>
+            <a href="#faq" class="nav-link drawer-nav-link">FAQ</a>
+            <a href="#contact" class="nav-link drawer-nav-link">Contact</a>
+        </nav>
+        <div class="drawer-footer">
+            <a href="#registration" class="btn btn-primary drawer-nav-link" style="width: 100%;">
+                <i data-lucide="user-plus"></i>
+                <span>Register as a Player</span>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="pitch-overlay"></div>
+            <div class="hero-glow-circle"></div>
+            <div class="hero-glow-circle-secondary"></div>
+            <div class="container hero-content">
+                <div class="hero-badges-wrapper">
+                    <span class="hero-badge hero-badge-accent">
+                        <span class="live-dot-ping-wrap">
+                            <span class="live-dot-ping-wave"></span>
+                            <span class="live-dot-ping-center"></span>
+                        </span>
+                        <i data-lucide="users"></i>
+                        <span>4 Teams • Registrations Live</span>
+                    </span>
+                    <span class="hero-badge">
+                        <i data-lucide="calendar"></i>
+                        <span>Late November — Early December</span>
+                    </span>
+                </div>
+
+                <h1 class="hero-title">
+                    Netaji Nagar<br>
+                    <span class="hero-title-accent">Super League</span>
+                </h1>
+
+                <p class="hero-tagline">FOOTBALL. COMPETITION. COMMUNITY.</p>
+
+                <p class="hero-description">
+                    A 4-team football tournament bringing players together for an intense grassroots football experience.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#registration" class="btn btn-primary btn-large">
+                        <i data-lucide="user-plus"></i>
+                        <span>Register as a Player</span>
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary btn-large">
+                        <i data-lucide="workflow"></i>
+                        <span>How It Works</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Player Registration Section (Step 1: Details -> Step 2: Tournament Overview & Final Confirmation) -->
+        <section class="section" id="registration" style="background: var(--bg-secondary);">
+            <div class="container registration-container">
+                
+                <!-- Stepper Progress Bar -->
+                <div class="stepper-nav" aria-label="Registration Progress">
+                    <div class="step-indicator active" id="step-nav-1">
+                        <div class="step-circle" id="step-circle-1">1</div>
+                        <span>1. Player Details</span>
+                    </div>
+                    <div class="step-divider-line" id="step-divider"></div>
+                    <div class="step-indicator" id="step-nav-2">
+                        <div class="step-circle" id="step-circle-2">2</div>
+                        <span>2. Overview & Confirm</span>
+                    </div>
+                </div>
+
+                <!-- Setup Alert Banner (Displayed only if Firebase credentials require configuration) -->
+                <div id="firebase-setup-alert" class="setup-alert-banner" style="display: none;">
+                    <div class="setup-alert-icon">
+                        <i data-lucide="alert-triangle"></i>
+                    </div>
+                    <div>
+                        <div class="setup-alert-title">Firebase Credentials Needed</div>
+                        <div class="setup-alert-text">
+                            To persist registrations directly into your live Firestore database, update <code>js/firebase-config.js</code> with your Firebase project settings. Follow the instructions in <code>README.md</code>.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Card Container -->
+                <div class="registration-card" id="registration-form-card">
+                    
+                    <!-- STEP 1 PANEL: ENTER DETAILS -->
+                    <div class="step-panel active" id="step-1-panel">
+                        <div class="section-header" style="margin-bottom: 32px;">
+                            <span class="section-tag">
+                                <i data-lucide="user-plus"></i>
+                                <span>Step 01 of 02</span>
+                            </span>
+                            <h2 class="section-title">Player Registration</h2>
+                            <p class="section-subtitle">
+                                Register your details to participate in the Netaji Nagar Super League.
+                            </p>
+                        </div>
+
+                        <form id="player-registration-form" novalidate>
+                            <div class="form-grid">
+                                
+                                <!-- Full Name -->
+                                <div class="form-group form-full" id="group-name">
+                                    <label for="player-name" class="form-label">
+                                        <span>Full Name <span class="required-mark">*</span></span>
+                                        <span class="form-hint">2-100 characters</span>
+                                    </label>
+                                    <div class="input-wrapper">
+                                        <i data-lucide="user" class="input-icon"></i>
+                                        <input 
+                                            type="text" 
+                                            id="player-name" 
+                                            name="name" 
+                                            class="form-input" 
+                                            placeholder="e.g. Rahul Sharma"
+                                            autocomplete="name"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="form-error" id="error-name">
+                                        <i data-lucide="alert-circle"></i>
+                                        <span class="error-text">Please enter your full name.</span>
+                                    </div>
+                                </div>
+
+                                <!-- Email Address -->
+                                <div class="form-group" id="group-email">
+                                    <label for="player-email" class="form-label">
+                                        <span>Email Address <span class="required-mark">*</span></span>
+                                    </label>
+                                    <div class="input-wrapper">
+                                        <i data-lucide="mail" class="input-icon"></i>
+                                        <input 
+                                            type="email" 
+                                            id="player-email" 
+                                            name="email" 
+                                            class="form-input" 
+                                            placeholder="rahul@example.com"
+                                            autocomplete="email"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="form-error" id="error-email">
+                                        <i data-lucide="alert-circle"></i>
+                                        <span class="error-text">Please enter a valid email address.</span>
+                                    </div>
+                                </div>
+
+                                <!-- Phone Number -->
+                                <div class="form-group" id="group-phone">
+                                    <label for="player-phone" class="form-label">
+                                        <span>Phone Number <span class="required-mark">*</span></span>
+                                        <span class="form-hint">10 digits</span>
+                                    </label>
+                                    <div class="input-wrapper">
+                                        <i data-lucide="phone" class="input-icon"></i>
+                                        <input 
+                                            type="tel" 
+                                            id="player-phone" 
+                                            name="phone" 
+                                            class="form-input" 
+                                            placeholder="9876543210"
+                                            autocomplete="tel"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="form-error" id="error-phone">
+                                        <i data-lucide="alert-circle"></i>
+                                        <span class="error-text">Please enter a valid 10-digit phone number.</span>
+                                    </div>
+                                </div>
+
+                                <!-- WhatsApp Number -->
+                                <div class="form-group form-full" id="group-whatsapp">
+                                    <label for="player-whatsapp" class="form-label">
+                                        <span>WhatsApp Number <span class="required-mark">*</span></span>
+                                    </label>
+                                    <div class="input-wrapper">
+                                        <i data-lucide="message-square" class="input-icon"></i>
+                                        <input 
+                                            type="tel" 
+                                            id="player-whatsapp" 
+                                            name="whatsapp" 
+                                            class="form-input" 
+                                            placeholder="WhatsApp number for league communications"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="form-error" id="error-whatsapp">
+                                        <i data-lucide="alert-circle"></i>
+                                        <span class="error-text">Please enter a valid 10-digit WhatsApp number.</span>
+                                    </div>
+                                    <div style="margin-top: 8px;">
+                                        <label class="checkbox-label" for="sync-whatsapp-checkbox">
+                                            <input type="checkbox" id="sync-whatsapp-checkbox" class="hidden-checkbox">
+                                            <span class="checkbox-custom">
+                                                <i data-lucide="check"></i>
+                                            </span>
+                                            <span>WhatsApp number is the same as my phone number</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Preferred Position -->
+                                <div class="form-group form-full" id="group-position">
+                                    <label class="form-label">
+                                        <span>Preferred Position <span class="required-mark">*</span></span>
+                                        <span class="form-hint">Select one primary role</span>
+                                    </label>
+                                    
+                                    <div class="position-grid" id="position-selector" role="radiogroup" aria-label="Preferred Position">
+                                        <div class="position-card" data-position="Goalkeeper" role="radio" aria-checked="false" tabindex="0">
+                                            <div class="position-icon-wrap">
+                                                <i data-lucide="hand"></i>
+                                            </div>
+                                            <span class="position-name">Goalkeeper</span>
+                                        </div>
+                                        <div class="position-card" data-position="Defender" role="radio" aria-checked="false" tabindex="0">
+                                            <div class="position-icon-wrap">
+                                                <i data-lucide="anchor"></i>
+                                            </div>
+                                            <span class="position-name">Defender</span>
+                                        </div>
+                                        <div class="position-card" data-position="Midfielder" role="radio" aria-checked="false" tabindex="0">
+                                            <div class="position-icon-wrap">
+                                                <i data-lucide="compass"></i>
+                                            </div>
+                                            <span class="position-name">Midfielder</span>
+                                        </div>
+                                        <div class="position-card" data-position="Forward" role="radio" aria-checked="false" tabindex="0">
+                                            <div class="position-icon-wrap">
+                                                <i data-lucide="target"></i>
+                                            </div>
+                                            <span class="position-name">Forward</span>
+                                        </div>
+                                        <div class="position-card" data-position="Utility Player" role="radio" aria-checked="false" tabindex="0">
+                                            <div class="position-icon-wrap">
+                                                <i data-lucide="zap"></i>
+                                            </div>
+                                            <span class="position-name">Utility Player</span>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" id="selected-position" name="preferredPosition" value="">
+                                    <div class="form-error" id="error-position">
+                                        <i data-lucide="alert-circle"></i>
+                                        <span class="error-text">Please select your preferred playing position.</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Step 1 Continue Action -->
+                            <div class="form-actions" style="margin-top: 32px;">
+                                <button type="button" class="btn btn-primary btn-large submit-btn" id="to-step-2-btn">
+                                    <span class="btn-text">Continue to Tournament Overview</span>
+                                    <i data-lucide="arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- STEP 2 PANEL: TOURNAMENT OVERVIEW & CONFIRMATION -->
+                    <div class="step-panel" id="step-2-panel">
+                        <div class="section-header" style="margin-bottom: 28px;">
+                            <span class="section-tag" style="background: var(--accent-primary-dim); border-color: var(--accent-primary-border); color: var(--accent-primary);">
+                                <i data-lucide="clipboard-check"></i>
+                                <span>Step 02 of 02</span>
+                            </span>
+                            <h2 class="section-title">Tournament Overview & Confirmation</h2>
+                            <p class="section-subtitle">
+                                Review the official tournament structure, fee, refund policy, and your details. You will only be registered once you confirm below.
+                            </p>
+                        </div>
+
+                        <!-- 1. Tournament Overview 4 Cards -->
+                        <div class="overview-grid" style="margin-bottom: 24px;">
+                            <!-- 4 Teams -->
+                            <div class="card reveal-on-scroll reveal-delay-1" style="padding: 24px 20px;">
+                                <div class="card-icon-box" style="width: 44px; height: 44px; margin-bottom: 14px;">
+                                    <i data-lucide="users"></i>
+                                </div>
+                                <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 6px;">4 Teams</h3>
+                                <p class="card-text" style="font-size: 0.875rem;">
+                                    The league will feature four participating teams.
+                                </p>
+                            </div>
+
+                            <!-- Player Registration -->
+                            <div class="card reveal-on-scroll reveal-delay-2" style="padding: 24px 20px;">
+                                <div class="card-icon-box" style="width: 44px; height: 44px; margin-bottom: 14px;">
+                                    <i data-lucide="user-check"></i>
+                                </div>
+                                <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 6px;">Player Registration</h3>
+                                <p class="card-text" style="font-size: 0.875rem;">
+                                    Players register individually through the official registration portal.
+                                </p>
+                            </div>
+
+                            <!-- Tournament Window -->
+                            <div class="card reveal-on-scroll reveal-delay-3" style="padding: 24px 20px;">
+                                <div class="card-icon-box" style="width: 44px; height: 44px; margin-bottom: 14px;">
+                                    <i data-lucide="calendar-days"></i>
+                                </div>
+                                <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 6px;">Tournament Window</h3>
+                                <p class="card-text" style="font-size: 0.875rem;">
+                                    Late November to early December. Exact dates will be announced separately.
+                                </p>
+                            </div>
+
+                            <!-- Team Fee -->
+                            <div class="card reveal-on-scroll reveal-delay-4" style="padding: 24px 20px;">
+                                <div class="card-icon-box" style="width: 44px; height: 44px; margin-bottom: 14px;">
+                                    <i data-lucide="credit-card"></i>
+                                </div>
+                                <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 6px;">Team Fee</h3>
+                                <p class="card-text" style="font-size: 0.875rem;">
+                                    ₹1,800 – ₹2,250 per team. The final participation fee will be announced later.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 2. Participation Fee & Refund Policy Cards -->
+                        <div class="tournament-info-grid" style="margin-top: 0; margin-bottom: 28px;">
+                            <div class="info-banner-card highlight-card reveal-on-scroll reveal-delay-1">
+                                <div>
+                                    <span class="card-tag" style="color: var(--accent-primary);">
+                                        <i data-lucide="badge-percent"></i>
+                                        <span>Fee Structure</span>
+                                    </span>
+                                    <h3 class="card-title">Participation Fee</h3>
+                                    <div class="fee-display">
+                                        <span class="fee-amount">₹1,800 — ₹2,250</span>
+                                        <span class="fee-unit">Per Team</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                    Final participation fee will be announced later.
+                                </p>
+                            </div>
+
+                            <div class="info-banner-card warning-card reveal-on-scroll reveal-delay-2">
+                                <div>
+                                    <span class="card-tag" style="color: var(--warning);">
+                                        <i data-lucide="alert-triangle"></i>
+                                        <span>Official Policy</span>
+                                    </span>
+                                    <h3 class="card-title">Withdrawal & Refund Policy</h3>
+                                </div>
+                                <p class="card-text" style="font-size: 1.05rem; color: var(--text-primary); font-weight: 500;">
+                                    If a player withdraws from the tournament at a later stage, only 50% of the applicable participation fee will be refunded.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 3. Player Registration Summary Card -->
+                        <div class="review-player-card">
+                            <div class="review-player-header">
+                                <span class="review-player-title">
+                                    <i data-lucide="user"></i>
+                                    <span>Your Submitted Details</span>
+                                </span>
+                                <button type="button" class="edit-details-btn" id="edit-details-shortcut-btn">
+                                    <i data-lucide="edit-3"></i>
+                                    <span>Edit</span>
+                                </button>
+                            </div>
+
+                            <div class="review-details-grid">
+                                <div class="review-item">
+                                    <span class="review-item-label">Full Name</span>
+                                    <span class="review-item-value" id="review-display-name">-</span>
+                                </div>
+                                <div class="review-item">
+                                    <span class="review-item-label">Email Address</span>
+                                    <span class="review-item-value" id="review-display-email">-</span>
+                                </div>
+                                <div class="review-item">
+                                    <span class="review-item-label">Phone Number</span>
+                                    <span class="review-item-value" id="review-display-phone">-</span>
+                                </div>
+                                <div class="review-item">
+                                    <span class="review-item-label">WhatsApp Number</span>
+                                    <span class="review-item-value" id="review-display-whatsapp">-</span>
+                                </div>
+                                <div class="review-item" style="grid-column: 1 / -1;">
+                                    <span class="review-item-label">Preferred Position</span>
+                                    <span class="review-item-value" id="review-display-position" style="color: var(--accent-primary); font-weight: 800;">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Mandatory Terms & Refund Policy Agreement Checkbox -->
+                        <div class="terms-card" id="group-terms" style="margin-bottom: 24px;">
+                            <label class="checkbox-label" for="terms-checkbox">
+                                <input type="checkbox" id="terms-checkbox" name="terms" class="hidden-checkbox">
+                                <span class="checkbox-custom">
+                                    <i data-lucide="check"></i>
+                                </span>
+                                <span>
+                                    I confirm that the information provided above is accurate and I agree to the tournament registration and refund policy.
+                                </span>
+                            </label>
+                            <div class="form-error" id="error-terms" style="margin-top: 10px;">
+                                <i data-lucide="alert-circle"></i>
+                                <span class="error-text">You must agree to the tournament terms and refund policy to register.</span>
+                            </div>
+                        </div>
+
+                        <!-- 5. Step 2 Action Buttons -->
+                        <div class="step-actions-bar">
+                            <button type="button" class="btn btn-secondary" id="back-to-step-1-btn">
+                                <i data-lucide="arrow-left"></i>
+                                <span>Back to Edit Details</span>
+                            </button>
+
+                            <button type="button" class="btn btn-primary btn-large" id="confirm-registration-btn">
+                                <span class="btn-text">Confirm & Register</span>
+                                <i data-lucide="check"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Registration Success Screen -->
+                <div class="registration-success-card" id="registration-success-screen">
+                    <div class="success-badge-icon">
+                        <i data-lucide="check-circle-2"></i>
+                    </div>
+                    <h3 class="success-title">REGISTRATION SUCCESSFUL</h3>
+                    <p class="success-subtitle">Your player registration has been received.</p>
+
+                    <div class="reg-id-box">
+                        <div class="reg-id-label">Registration ID</div>
+                        <div class="reg-id-value" id="display-registration-id">NNSL-000000</div>
+                        <button type="button" class="copy-id-btn" id="copy-id-btn">
+                            <i data-lucide="copy"></i>
+                            <span id="copy-btn-text">Copy ID</span>
+                        </button>
+                    </div>
+
+                    <p class="success-note" style="margin-bottom: 20px;">
+                        Please save your registration ID for future reference.
+                    </p>
+
+                    <div class="reload-countdown-card" id="reload-countdown-box">
+                        <i data-lucide="refresh-cw" class="spin-icon-slow" style="width: 18px; height: 18px; color: var(--accent-primary); flex-shrink: 0;"></i>
+                        <span>Form will automatically reload for next registration in <strong id="reload-seconds-count">6</strong>s...</span>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                        <button type="button" class="btn btn-primary" id="register-another-btn">
+                            <i data-lucide="rotate-ccw"></i>
+                            <span>Register Another Player Now</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- How Registration Works Section -->
+        <section class="section" id="how-it-works">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">
+                        <i data-lucide="workflow"></i>
+                        <span>Process</span>
+                    </span>
+                    <h2 class="section-title">How Registration Works</h2>
+                    <p class="section-subtitle">A straightforward 3-step pathway from registration to kick-off.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card reveal-on-scroll reveal-delay-1">
+                        <div class="step-number">Step 01</div>
+                        <h3 class="card-title">Submit Details</h3>
+                        <p class="card-text">
+                            Fill out the official player registration form with your verified contact information and preferred position.
+                        </p>
+                    </div>
+                    <div class="step-card reveal-on-scroll reveal-delay-2">
+                        <div class="step-number">Step 02</div>
+                        <h3 class="card-title">Receive ID</h3>
+                        <p class="card-text">
+                            Obtain your unique NNSL registration ID. The tournament management reviews all submissions for roster balance.
+                        </p>
+                    </div>
+                    <div class="step-card reveal-on-scroll reveal-delay-3">
+                        <div class="step-number">Step 03</div>
+                        <h3 class="card-title">Squad Allocation</h3>
+                        <p class="card-text">
+                            Organisers confirm team allocations and announce the final team fee and match schedule.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" id="faq" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">
+                        <i data-lucide="help-circle"></i>
+                        <span>Common Questions</span>
+                    </span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Official tournament policies and competition details.</p>
+                </div>
+
+                <div class="faq-accordion" id="faq-accordion">
+                    <!-- Q1 -->
+                    <div class="faq-item reveal-on-scroll reveal-delay-1">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>How many teams will participate?</span>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                The Netaji Nagar Super League will feature four teams.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="faq-item reveal-on-scroll reveal-delay-2">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>When will the tournament take place?</span>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                The tournament is planned for late November to early December. Exact dates will be announced separately.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="faq-item reveal-on-scroll reveal-delay-1">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>What is the participation fee?</span>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                The team registration fee will be between ₹1,800 and ₹2,250. The final amount will be announced later.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="faq-item reveal-on-scroll reveal-delay-2">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>What happens if I withdraw?</span>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                If a player withdraws at a later stage, only 50% of the applicable participation fee will be refunded.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div class="faq-item reveal-on-scroll reveal-delay-3">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>Can I change my preferred position?</span>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                If you need to update your registered position or correct any information, please contact the tournament organisers at <a href="mailto:swastik.contacts55@gmail.com" style="color: var(--accent-primary); text-decoration: underline;">swastik.contacts55@gmail.com</a> or via Instagram <a href="https://instagram.com/rajmalo19" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); text-decoration: underline;">@rajmalo19</a> / <a href="https://instagram.com/_pritz_yy" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); text-decoration: underline;">@_pritz_yy</a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="contact-card reveal-on-scroll">
+                    <span class="section-tag" style="margin-bottom: 12px; display: inline-block;">OFFICIAL CONTACT</span>
+                    <h3 class="contact-title">Tournament Organisers</h3>
+                    <p class="contact-message">
+                        Have queries regarding player registration, team slots, match rules, or tournament schedules? Reach out directly to the organising committee.
+                    </p>
+
+                    <!-- Interactive Channels Grid (Email + Both Instagram Profiles) -->
+                    <div class="contact-channels-grid">
+                        <!-- Email Channel -->
+                        <a href="mailto:swastik.contacts55@gmail.com" class="contact-channel-item" aria-label="Send email to swastik.contacts55@gmail.com">
+                            <div class="contact-channel-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div class="contact-channel-body">
+                                <span class="contact-channel-label">Official Email</span>
+                                <span class="contact-channel-value">swastik.contacts55@gmail.com</span>
+                            </div>
+                            <span class="contact-channel-action">
+                                <i data-lucide="external-link"></i>
+                            </span>
+                        </a>
+
+                        <!-- Instagram Channel 1: rajmalo19 -->
+                        <a href="https://instagram.com/rajmalo19" target="_blank" rel="noopener noreferrer" class="contact-channel-item" aria-label="Visit Instagram @rajmalo19">
+                            <div class="contact-channel-icon instagram-accent">
+                                <svg class="instagram-icon-svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                </svg>
+                            </div>
+                            <div class="contact-channel-body">
+                                <span class="contact-channel-label">Organiser Instagram</span>
+                                <span class="contact-channel-value">@rajmalo19</span>
+                            </div>
+                            <span class="contact-channel-action">
+                                <i data-lucide="external-link"></i>
+                            </span>
+                        </a>
+
+                        <!-- Instagram Channel 2: _pritz_yy -->
+                        <a href="https://instagram.com/_pritz_yy" target="_blank" rel="noopener noreferrer" class="contact-channel-item" aria-label="Visit Instagram @_pritz_yy">
+                            <div class="contact-channel-icon instagram-accent">
+                                <svg class="instagram-icon-svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                </svg>
+                            </div>
+                            <div class="contact-channel-body">
+                                <span class="contact-channel-label">Organiser Instagram</span>
+                                <span class="contact-channel-value">@_pritz_yy</span>
+                            </div>
+                            <span class="contact-channel-action">
+                                <i data-lucide="external-link"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="contact-footer-action">
+                        <p class="contact-message" style="margin-bottom: 16px;">
+                            Registrations are live for all tactical positions. Reserve your slot now!
+                        </p>
+                        <a href="#registration" class="btn btn-primary">
+                            <i data-lucide="user-plus"></i>
+                            <span>Register as a Player</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Comprehensive Tournament Footer -->
+    <footer class="site-footer" id="site-footer">
+        <div class="container footer-content-wrap">
+            <!-- Top Multi-Column Grid -->
+            <div class="footer-grid">
+                <!-- Column 1: League Brand & Identity -->
+                <div class="footer-col footer-col-brand">
+                    <a href="#hero" class="brand-link" aria-label="Netaji Nagar Super League Home" style="display: inline-block; margin-bottom: 16px;">
+                        <div class="brand-text-block">
+                            <span class="brand-title">Netaji Nagar</span>
+                            <span class="brand-badge">Super League</span>
+                        </div>
+                    </a>
+                    <p class="footer-bio">
+                        The premier 4-team grassroots football tournament bringing local passion, raw talent, and competitive excellence to the pitch.
+                    </p>
+                    <div class="footer-badges-row">
+                        <span class="footer-pill-tag">4 Teams</span>
+                        <span class="footer-pill-tag">Grassroots</span>
+                        <span class="footer-pill-tag">Kolkata</span>
+                    </div>
+
+                    <!-- Tech Partner Card -->
+                    <div class="footer-tech-partner-card">
+                        <span class="footer-partner-tag">TECH PARTNER</span>
+                        <a href="https://www.vmctechindia.in" target="_blank" rel="noopener noreferrer" class="footer-partner-name" aria-label="Visit Tech Partner VMC Tech India">
+                            <span>VMC Tech India</span>
+                            <span class="footer-partner-url">www.vmctechindia.in</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Navigation</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#hero" class="footer-nav-link">Home</a></li>
+                        <li><a href="#registration" class="footer-nav-link">Player Registration</a></li>
+                        <li><a href="#how-it-works" class="footer-nav-link">How It Works</a></li>
+                        <li><a href="#faq" class="footer-nav-link">Tournament FAQ</a></li>
+                        <li><a href="#contact" class="footer-nav-link">Contact Organisers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Tournament Information -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Tournament Info</h4>
+                    <div class="footer-info-rows">
+                        <div class="footer-info-row">
+                            <span class="footer-info-key">Format:</span>
+                            <span class="footer-info-val">4-Team Tournament</span>
+                        </div>
+                        <div class="footer-info-row">
+                            <span class="footer-info-key">Period:</span>
+                            <span class="footer-info-val">Late Nov – Early Dec</span>
+                        </div>
+                        <div class="footer-info-row">
+                            <span class="footer-info-key">Team Fee:</span>
+                            <span class="footer-info-val">₹1,800 – ₹2,250 (TBA)</span>
+                        </div>
+                        <div class="footer-info-row">
+                            <span class="footer-info-key">Refunds:</span>
+                            <span class="footer-info-val">50% on Late Withdrawal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 4: Official Organisers Contact -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Official Contact</h4>
+                    <p class="footer-contact-desc">
+                        Direct communication channels for player queries & match coordination:
+                    </p>
+                    <div class="footer-channels-stack">
+                        <a href="mailto:swastik.contacts55@gmail.com" class="footer-channel-pill" aria-label="Send Email">
+                            <div class="footer-channel-icon-wrap">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <span class="footer-channel-text">swastik.contacts55@gmail.com</span>
+                        </a>
+
+                        <a href="https://instagram.com/rajmalo19" target="_blank" rel="noopener noreferrer" class="footer-channel-pill" aria-label="Visit Instagram @rajmalo19">
+                            <div class="footer-channel-icon-wrap instagram-tint">
+                                <svg class="instagram-icon-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                </svg>
+                            </div>
+                            <span class="footer-channel-text">@rajmalo19</span>
+                        </a>
+
+                        <a href="https://instagram.com/_pritz_yy" target="_blank" rel="noopener noreferrer" class="footer-channel-pill" aria-label="Visit Instagram @_pritz_yy">
+                            <div class="footer-channel-icon-wrap instagram-tint">
+                                <svg class="instagram-icon-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                </svg>
+                            </div>
+                            <span class="footer-channel-text">@_pritz_yy</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright & Back to Top Bar -->
+            <div class="footer-bottom-bar">
+                <div class="footer-bottom-copy">
+                    <span>© 2026 Netaji Nagar Super League. All rights reserved.</span>
+                    <span class="footer-bottom-divider">•</span>
+                    <span class="footer-tech-partner-mention">Tech Partner: <a href="https://www.vmctechindia.in" target="_blank" rel="noopener noreferrer" class="footer-partner-inline-link">VMC Tech India - www.vmctechindia.in</a></span>
+                    <span class="footer-bottom-divider">•</span>
+                    <span class="footer-bottom-motto">FOOTBALL • COMPETITION • COMMUNITY</span>
+                </div>
+                <div class="footer-bottom-actions">
+                    <a href="#hero" class="back-to-top-btn" aria-label="Scroll back to top">
+                        <span>Back to top</span>
+                        <i data-lucide="arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Script Entry Point -->
+    <script type="module" src="js/registration.js"></script>
+</body>
+</html>

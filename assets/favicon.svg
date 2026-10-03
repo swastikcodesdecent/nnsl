@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#050811"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" stroke="#00F59B" stroke-width="2" stroke-opacity="0.3"/>
+  <!-- Trophy Cup Silhouette -->
+  <path d="M22 14H42V26C42 32 37 36 32 36C27 36 22 32 22 26V14Z" fill="#0F172A" stroke="#00F59B" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M22 18H16C14 18 13 20 13 22C13 26 16 29 20 30" stroke="#00F59B" stroke-width="2" stroke-linecap="round"/>
+  <path d="M42 18H48C50 18 51 20 51 22C51 26 48 29 44 30" stroke="#00F59B" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 36V44" stroke="#00F59B" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M24 44H40" stroke="#00F59B" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M20 50H44" stroke="#00D8F6" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Star Emblem -->
+  <path d="M32 20L33.5 23.5L37 24L34.5 26.5L35 30L32 28.5L29 30L29.5 26.5L27 24L30.5 23.5L32 20Z" fill="#00F59B"/>
+</svg>
